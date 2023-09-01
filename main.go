@@ -35,6 +35,7 @@ func deleteMovie(w http.ResponseWriter, r *http.Request) {
 			movies = append(movies[:index], movies[index+1:]...)
 		}
 	}
+	json.NewEncoder(w).Encode(movies)
 }
 
 func getMovie(w http.ResponseWriter, r *http.Request) {
